@@ -16,4 +16,4 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "The debugger will run for 10 minutes before it is terminated!"
 echo "Open your browser at <%= baseUrl %> to execute commands"
 
-timeout 10m node client.js
+URL="<%= baseUrl %>" timeout 10m node client.js
