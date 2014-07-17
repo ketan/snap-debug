@@ -1,7 +1,8 @@
 console.log(process.env.URL)
 var socket = require('socket.io-client')(process.env.URL);
 var spawn = require('child_process').spawn;
-var sys = require('sys')
+var sys = require('sys');
+var path = require('path');
 
 socket.on('connect', function() {
   console.log('connected...');
@@ -9,7 +10,7 @@ socket.on('connect', function() {
   socket.on('command-to-run', function(command) {
     console.log(' $ ' + command)
 
-    var cmd = spawn("bash", ["-c", command]);
+    var cmd = spawn("bash", ["-c", command], {cwd: path.join(__dirname, '..')});
 
     cmd.stdout.on('data', function(data) {
       sys.print(data);
