@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "A shell like client to debug your Snap builds",
   "dependencies": {
+    "colors": "^0.6.2",
+    "pluralize": "0.0.10",
     "socket.io-client": "^1.0.6"
   }
 }
