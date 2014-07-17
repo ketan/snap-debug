@@ -1,13 +1,10 @@
-var socket = require('socket.io-client')('http://localhost:3000');
+console.log(process.env.URL)
+var socket = require('socket.io-client')(process.env.URL);
 
 socket.on('connect', function() {
   console.log('connected...');
 
-  socket.on('event', function(data) {
-    console.log('got event')
-  });
-
-  socket.on('chat message', function(data) {
+  socket.on('command-to-run', function(data) {
     console.log('got event' + data)
   });
 
