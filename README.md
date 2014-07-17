@@ -12,6 +12,6 @@ First push this app to heroku, this will be deployed to https://APP_NAME.herokua
 
 In Snap, create a build plan with the following:
 
-    $ curl https://APP_NAME.herokuapp.com/debug | bash
+    $ curl --silent --fail https://APP_NAME.herokuapp.com/debug | bash
 
 When you run the build, this will show instructions on how to debug the build
