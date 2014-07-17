@@ -11,9 +11,9 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  socket.on('chat message', function(msg) {
+  socket.on('command-to-run', function(msg) {
     console.log('message: ' + msg);
-    io.emit('chat message', msg);
+    io.emit('command-to-run', msg);
   });
 });
 
