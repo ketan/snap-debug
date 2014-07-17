@@ -1,11 +1,10 @@
-console.log(process.env.URL)
 var socket = require('socket.io-client')(process.env.URL);
 var spawn = require('child_process').spawn;
 var sys = require('sys');
 var path = require('path');
 
 socket.on('connect', function() {
-  console.log('connected...');
+  console.log('Connected to ' + process.env.URL);
 
   socket.on('command-to-run', function(command) {
     console.log(' $ ' + command)
@@ -15,7 +14,7 @@ socket.on('connect', function() {
       process.exit(0);
     }
 
-    var cmd = spawn("bash", ["-c", command], {cwd: path.join(__dirname, '..')});
+    var cmd = spawn("bash", ["-c", command], {cwd: path.join(__dirname, '..', '..')});
 
     cmd.stdout.on('data', function(data) {
       sys.print(data);

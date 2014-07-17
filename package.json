@@ -1,12 +1,11 @@
 {
-  "name": "socket-chat-example",
+  "name": "snap-debug-server",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "A shell like server to debug your Snap builds",
   "dependencies": {
     "ejs": "^1.0.0",
     "express": "^4.6.1",
     "logfmt": "^1.1.2",
-    "socket.io": "^1.0.6",
-    "socket.io-client": "^1.0.6"
+    "socket.io": "^1.0.6"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "name": "snap-debug-client",
+  "version": "0.0.1",
+  "description": "A shell like client to debug your Snap builds",
+  "dependencies": {
+    "socket.io-client": "^1.0.6"
+  }
+}
