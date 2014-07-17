@@ -10,6 +10,11 @@ socket.on('connect', function() {
   socket.on('command-to-run', function(command) {
     console.log(' $ ' + command)
 
+    if(command == 'exit' || command == 'quit'){
+      console.log("Exiting...")
+      process.exit(0);
+    }
+
     var cmd = spawn("bash", ["-c", command], {cwd: path.join(__dirname, '..')});
 
     cmd.stdout.on('data', function(data) {
